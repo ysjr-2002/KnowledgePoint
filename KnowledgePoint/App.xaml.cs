@@ -1,10 +1,12 @@
-﻿using KnowledgePoint.FindContenChild;
+﻿using KnowledgePoint.ChangeLabelDefaultSelectedColor;
+using KnowledgePoint.FindContenChild;
 using KnowledgePoint.LINQ;
 using KnowledgePoint.ScrollToLastItem;
 using KnowledgePoint.SystemHotkey;
 using KnowledgePoint.TargetChanged;
 using KnowledgePoint.Tasks;
 using KnowledgePoint.Thread;
+using KnowledgePoint.TreeViewItem;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -23,7 +25,7 @@ namespace KnowledgePoint
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            var win = new ListBoxItemWindow();
+            var win = new SetColorToTreeViewItemWindow();
             Application.Current.MainWindow = win;
             Application.Current.MainWindow.Show();
         }

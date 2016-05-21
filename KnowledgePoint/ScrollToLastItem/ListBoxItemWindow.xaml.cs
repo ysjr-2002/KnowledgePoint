@@ -17,9 +17,9 @@ namespace KnowledgePoint.ScrollToLastItem
     /// <summary>
     /// Interaction logic for ListBoxItemWindow.xaml
     /// </summary>
-    public partial class ListBoxItemWindow : Window
+    public partial class ChangeLabelDefaultSelectedColor : Window
     {
-        public ListBoxItemWindow()
+        public ChangeLabelDefaultSelectedColor()
         {
             InitializeComponent();
         }
@@ -28,6 +28,32 @@ namespace KnowledgePoint.ScrollToLastItem
         {
             lb.Items.Add(DateTime.Now.ToString("HH:mm:ss"));
             lb.SelectedIndex = lb.Items.Count - 1;
+
+            var str1 = this.FindResource("str1") as string;
+            var str2 = this.FindResource("str2") as string;
+
+            var str3 = "";
+            var str4 = "";
+            var logcichilds = LogicalTreeHelper.GetChildren(this);
+            foreach (var item in logcichilds)
+            {
+                var t = item;
+                if( t is StackPanel)
+                {
+                    var sp = t as StackPanel;
+                    str3 = sp.FindResource("str3") as string;
+                    str4 = sp.FindResource("str4") as string;
+                }
+            }
+
+
+            var visualchilds = VisualTreeHelper.GetChild(this, 0);
+            var childcount = VisualTreeHelper.GetChildrenCount(this);
+
+            System.Diagnostics.Debug.WriteLine(str1);
+            System.Diagnostics.Debug.WriteLine(str2);
+            System.Diagnostics.Debug.WriteLine(str3);
+            System.Diagnostics.Debug.WriteLine(str4);
         }
     }
 }

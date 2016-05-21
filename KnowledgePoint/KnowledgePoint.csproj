@@ -65,11 +65,17 @@
     </Compile>
     <Compile Include="BindingToListBoxItem\Person.cs" />
     <Compile Include="BindingToListBoxItem\PersonViewModel.cs" />
+    <Compile Include="ChangeLabelDefaultSelectedColor\LabelWindow.xaml.cs">
+      <DependentUpon>LabelWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FindContenChild\FindUserControlChildWindow.xaml.cs">
       <DependentUpon>FindUserControlChildWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="FindContenChild\StackpanelChild.xaml.cs">
       <DependentUpon>StackpanelChild.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NagativeMargin\MarginWindow.xaml.cs">
+      <DependentUpon>MarginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="NotifyBase\NotifyPropertyBase.cs" />
     <Compile Include="NotifyBase\PropertyNotifyObject.cs" />
@@ -92,10 +98,17 @@
     <Compile Include="Thread\EventWaitHandleWindow.xaml.cs">
       <DependentUpon>EventWaitHandleWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TreeViewItem\SetColorToTreeViewItemWindow.xaml.cs">
+      <DependentUpon>SetColorToTreeViewItemWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPFTools\VisualTreeHelperExtensions.cs" />
     <Page Include="BindingToListBoxItem\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChangeLabelDefaultSelectedColor\LabelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FindContenChild\FindUserControlChildWindow.xaml">
       <SubType>Designer</SubType>
@@ -116,6 +129,10 @@
     <Compile Include="LINQ\QuantifiersWindow.xaml.cs">
       <DependentUpon>QuantifiersWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="NagativeMargin\MarginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ScrollToLastItem\ListBoxItemWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Thread\EventWaitHandleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TreeViewItem\SetColorToTreeViewItemWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
