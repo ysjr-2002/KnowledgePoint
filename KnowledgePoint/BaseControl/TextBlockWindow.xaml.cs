@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace KnowledgePoint.ChangeLabelDefaultSelectedColor
+namespace KnowledgePoint.TextBlockEx
 {
     /// <summary>
-    /// Interaction logic for LabelWindow.xaml
+    /// TextBlock控件的一些基本特性
     /// </summary>
-    public partial class LabelWindow : Window
+    public partial class TextBlockWindow : Window
     {
-        public LabelWindow()
+        public TextBlockWindow()
         {
             InitializeComponent();
         }

@@ -7,11 +7,9 @@
         Title="TaskWindow"
         Width="300"
         Height="300"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
-    <Grid>
-        <Label Name="tb"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"
-               Content="文本框" />
-    </Grid>
+    <StackPanel>
+        <Button Click="Button_Click" Content="Wait task" />
+    </StackPanel>
 </Window>

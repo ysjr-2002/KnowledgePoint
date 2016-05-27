@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace KnowledgePoint.WPFTools
 {
@@ -27,6 +28,32 @@ namespace KnowledgePoint.WPFTools
             } while (current != null);
 
             return null;
+        }
+
+        public static T FindChild<T>(DependencyObject root) where T : DependencyObject
+        {
+            if (root == null)
+                return null;
+
+            T founded = null;
+
+            for (int j = 0; j < VisualTreeHelper.GetChildrenCount(root); j++)
+            {
+                DependencyObject d = VisualTreeHelper.GetChild(root, j);
+                T childType = d as T;
+                if (childType == null)
+                {
+                    founded = FindChild<T>(d);
+                    if (founded != null)
+                        break;
+                }
+                else
+                {
+                    founded = childType;
+                    break;
+                }
+            }
+            return founded;
         }
     }
 }

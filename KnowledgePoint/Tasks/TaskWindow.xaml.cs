@@ -33,17 +33,34 @@ namespace KnowledgePoint.Tasks
                 return 99;
             }
             ).
-            ContinueWith(s => Task.Run(() => 
+            ContinueWith(s => Task.Run(() =>
             {
                 if (s.Result == 100)
                 {
-                    System.Diagnostics.Debug.WriteLine("ok");
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine("error");
                 }
             }));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Task<bool> task = StartTask();
+            System.Diagnostics.Debug.WriteLine("shit 1");
+            //await task;
+            System.Diagnostics.Debug.WriteLine("shit 2");
+        }
+
+
+        private Task<bool> StartTask()
+        {
+            return Task<bool>.Factory.StartNew(() =>
+            {
+                System.Threading.Thread.Sleep(5000);
+                System.Diagnostics.Debug.WriteLine("ok");
+                return true;
+            });
         }
     }
 }

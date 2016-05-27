@@ -1,10 +1,13 @@
-﻿using KnowledgePoint.ChangeLabelDefaultSelectedColor;
+﻿using KnowledgePoint.BaseControl;
 using KnowledgePoint.FindContenChild;
+using KnowledgePoint.ItemsContainer;
 using KnowledgePoint.LINQ;
+using KnowledgePoint.RebootMachine;
 using KnowledgePoint.ScrollToLastItem;
 using KnowledgePoint.SystemHotkey;
 using KnowledgePoint.TargetChanged;
 using KnowledgePoint.Tasks;
+using KnowledgePoint.TextBlockEx;
 using KnowledgePoint.Thread;
 using KnowledgePoint.TreeViewItem;
 using System;
@@ -22,12 +25,17 @@ namespace KnowledgePoint
     /// </summary>
     public partial class App : Application
     {
-
         protected override void OnStartup(StartupEventArgs e)
         {
-            var win = new SetColorToTreeViewItemWindow();
+            var win = new TreeviewItemContainerWindow();
             Application.Current.MainWindow = win;
             Application.Current.MainWindow.Show();
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("Unhandled Exception:" + e.Exception);
+            e.Handled = true;
         }
     }
 }

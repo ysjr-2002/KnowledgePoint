@@ -36,11 +36,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Practices.Prism">
       <HintPath>..\..\DevExpressStudy\DevExpressStudy\bin\Debug\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +59,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -60,25 +70,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BaseControl\AttachProperty.cs" />
+    <Compile Include="BaseControl\DPUserControl.xaml.cs">
+      <DependentUpon>DPUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\LabelWindow.xaml.cs">
+      <DependentUpon>LabelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\PasswordWindow.xaml.cs">
+      <DependentUpon>PasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\SimpleCommand.cs" />
+    <Compile Include="BaseControl\SpinEditorWindow.xaml.cs">
+      <DependentUpon>SpinEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\TextBoxWindow.xaml.cs">
+      <DependentUpon>TextBoxWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BindingToListBoxItem\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="BindingToListBoxItem\Person.cs" />
     <Compile Include="BindingToListBoxItem\PersonViewModel.cs" />
-    <Compile Include="ChangeLabelDefaultSelectedColor\LabelWindow.xaml.cs">
-      <DependentUpon>LabelWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FindContenChild\FindUserControlChildWindow.xaml.cs">
       <DependentUpon>FindUserControlChildWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="FindContenChild\StackpanelChild.xaml.cs">
       <DependentUpon>StackpanelChild.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ItemsContainer\ListItemViewContainerWindow.xaml.cs">
+      <DependentUpon>ListItemViewContainerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsContainer\TreeviewItemContainerWindow.xaml.cs">
+      <DependentUpon>TreeviewItemContainerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NagativeMargin\MarginWindow.xaml.cs">
       <DependentUpon>MarginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="NotifyBase\NotifyPropertyBase.cs" />
     <Compile Include="NotifyBase\PropertyNotifyObject.cs" />
+    <Compile Include="RebootMachine\RebootMachineWindow.xaml.cs">
+      <DependentUpon>RebootMachineWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScrollToLastItem\ItemControlHelper.cs" />
     <Compile Include="ScrollToLastItem\ListBoxItemWindow.xaml.cs">
       <DependentUpon>ListBoxItemWindow.xaml</DependentUpon>
@@ -95,6 +128,9 @@
     <Compile Include="Tasks\TaskWindow.xaml.cs">
       <DependentUpon>TaskWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BaseControl\TextBlockWindow.xaml.cs">
+      <DependentUpon>TextBlockWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Thread\EventWaitHandleWindow.xaml.cs">
       <DependentUpon>EventWaitHandleWindow.xaml</DependentUpon>
     </Compile>
@@ -102,19 +138,43 @@
       <DependentUpon>SetColorToTreeViewItemWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPFTools\VisualTreeHelperExtensions.cs" />
+    <Page Include="BaseControl\DPUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControl\LabelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControl\PasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControl\SpinEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControl\TextBoxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BindingToListBoxItem\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ChangeLabelDefaultSelectedColor\LabelWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FindContenChild\FindUserControlChildWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FindContenChild\StackpanelChild.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ItemsContainer\ListItemViewContainerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ItemsContainer\TreeviewItemContainerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RebootMachine\RebootMachineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ScrollToLastItem\ListBoxItemWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tasks\TaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseControl\TextBlockWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,7 +253,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ChangeLabelDefaultSelectedColor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\1.png" />
+    <Resource Include="images\2.png" />
+    <Resource Include="images\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\folder.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
