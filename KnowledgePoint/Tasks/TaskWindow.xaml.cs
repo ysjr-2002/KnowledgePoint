@@ -46,10 +46,24 @@ namespace KnowledgePoint.Tasks
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Task<bool> task = StartTask();
-            System.Diagnostics.Debug.WriteLine("shit 1");
-            //await task;
-            System.Diagnostics.Debug.WriteLine("shit 2");
+            Task task = Task.Run(() =>
+            {
+                throw new ArgumentException("cx");
+            });
+
+            task.ContinueWith((t) =>
+            {
+                System.Diagnostics.Debug.WriteLine("hz:" + t.Exception);
+            }, TaskContinuationOptions.OnlyOnFaulted);
+
+            try
+            {
+                task.Wait();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("hz: error");
+            }
         }
 
 

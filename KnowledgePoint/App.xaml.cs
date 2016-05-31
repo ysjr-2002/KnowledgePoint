@@ -3,6 +3,7 @@ using KnowledgePoint.FindContenChild;
 using KnowledgePoint.ItemsContainer;
 using KnowledgePoint.LINQ;
 using KnowledgePoint.RebootMachine;
+using KnowledgePoint.RoutedEvent;
 using KnowledgePoint.ScrollToLastItem;
 using KnowledgePoint.SystemHotkey;
 using KnowledgePoint.TargetChanged;
@@ -27,7 +28,7 @@ namespace KnowledgePoint
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            var win = new TreeviewItemContainerWindow();
+            var win = new TaskWindow();
             Application.Current.MainWindow = win;
             Application.Current.MainWindow.Show();
         }

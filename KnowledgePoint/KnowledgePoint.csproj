@@ -112,6 +112,12 @@
     <Compile Include="RebootMachine\RebootMachineWindow.xaml.cs">
       <DependentUpon>RebootMachineWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RoutedEvent\BubbleRoutedEventWindow.xaml.cs">
+      <DependentUpon>BubbleRoutedEventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RoutedEvent\FireButtonRoutedEvent.xaml.cs">
+      <DependentUpon>FireButtonRoutedEvent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScrollToLastItem\ItemControlHelper.cs" />
     <Compile Include="ScrollToLastItem\ListBoxItemWindow.xaml.cs">
       <DependentUpon>ListBoxItemWindow.xaml</DependentUpon>
@@ -194,6 +200,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RebootMachine\RebootMachineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutedEvent\BubbleRoutedEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutedEvent\FireButtonRoutedEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
